@@ -23,13 +23,14 @@ function App() {
 
   return (
     <Grid
-      rows={['60px', 'auto', '40px']}
+      rows={['60px', 'auto', '30px']}
       cols = {['auto']}
       areas = {[
         ['header'],
         ['main'],
         ['footer']
       ]}
+      backgroundColor='altGray1'
     >
     {/** HEADER */}
     <Box 
@@ -38,12 +39,12 @@ function App() {
       border='bottom'
       direction='row'
       align='center'
-      padding='20px'
+      padding='12px'
       size='large'
       overflow='hidden'
     >
       <FilterIcon onClick={toggle} size={25} />
-      <span style={{ color: 'white', fontWeight: 'bold' }}>Motor Starter Dashboard</span>
+      <span style={{ color: 'white', fontWeight: 'bold' }}>Motor Starter Dashboard <span role='img' aria-label='peace_emoji'>✌️</span></span>
     </Box>
      {/** SIDEBAR */}
     <Sidebar 
