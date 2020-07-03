@@ -3,13 +3,27 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { Juno } from 'juno-ui/dist'
+
+import { Motor } from 'motor-ui'
+import theme from './theme'
 
 ReactDOM.render(
   <React.StrictMode>
-      <Juno >
+      <Motor 
+        config={{
+          /*  
+          //Enter your app config here..
+          host: '',
+          secure: ,
+          port: ,
+          prefix: '',
+          appId: '',
+          */
+        }}
+        theme={theme}
+      >
         <App />
-      </Juno>
+      </Motor>
   </React.StrictMode>,
   document.getElementById('root')
 );

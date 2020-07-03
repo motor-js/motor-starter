@@ -1,78 +1,67 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import styled from 'styled-components'
 import './App.css'
-import { Grid, Box, SmartHeading, Sidebar, useScreenSize, useSidebar } from 'juno-ui/dist'
-import { Menu } from '@styled-icons/feather'
+import MainContent from './sections/MainContent.jsx'
+import SidebarContent from './sections/SidebarContent.jsx'
+import { 
+  Grid,
+  Box,
+  Sidebar,
+  useSidebar,
+} from 'motor-ui'
+import { Filter } from '@styled-icons/ionicons-solid'
+
+const FilterIcon = styled(Filter)`
+  color: white;
+  padding: 0px 30px 0px 5px;
+`
 
 function App() {
 
-  //state for tablet and mobile viewing
-  const [smallScreen, setSmallScreen] = useState(false)
-  
-  //get the screen type
-  const { screen } = useScreenSize()
   //use the Siderbar hook
   const {isOpen, toggle} = useSidebar();
-
-  useEffect(() => {
-    if( screen === 'mobile' || screen === 'tablet' ) {
-      setSmallScreen(true)
-    } else { setSmallScreen(false) }
-  })
-  
-
-  let cols
-  let areas
-
-  //change grid based on screen size
-  if(smallScreen) {
-    cols = ['auto'];
-    areas = [
-      ['header'],
-      ['main'],
-      ['footer']
-    ]
-  } else {
-    cols = ['20%', 'auto']
-    areas = [
-      ['sidebar','header'],
-      ['sidebar','main'],
-      ['sidebar','footer']
-    ]
-  }
-
-  //render sidebar
-  const sidebar = () => {
-    if(smallScreen) {
-      return (
-        <Sidebar 
-          width='100%'
-          collapsable
-          padding='15px 20px'
-          isOpen={isOpen}
-          backgroundColor='brand'
-          justifyContent='top'
-        >
-
-          <Menu onClick={toggle} size={25} style={{ padding: '0px 30px 0px 5px' }} /> 
-          {/** Sidebar */}
-          </Sidebar>
-      )
-     } else {
-       return <Box gridArea='sidebar' backgroundColor='brand'></Box> 
-     }      }
-
 
   return (
     <Grid
       rows={['60px', 'auto', '40px']}
-      columns={cols}
-      areas={areas}
+      cols = {['auto']}
+      areas = {[
+        ['header'],
+        ['main'],
+        ['footer']
+      ]}
     >
-    <Box gridArea='header' border='bottom' direction='row' align='center' padding='20px' size='large'>
-        { smallScreen && <Menu onClick={toggle} size={25} style={{ padding: '0px 30px 0px 5px' }} />}
-      <div>Motor Starter Dashboard</div>
+    {/** HEADER */}
+    <Box 
+      gridArea='header'
+      backgroundColor='brand'
+      border='bottom'
+      direction='row'
+      align='center'
+      padding='20px'
+      size='large'
+      overflow='hidden'
+    >
+      <FilterIcon onClick={toggle} size={25} />
+      <span style={{ color: 'white', fontWeight: 'bold' }}>Motor Starter Dashboard</span>
     </Box>
-    {sidebar()}
+     {/** SIDEBAR */}
+    <Sidebar 
+      width='30%'
+      collapsable
+      padding='15px 20px'
+      isOpen={isOpen}
+      backgroundColor='altGray1'
+      justifyContent='top'
+    >
+      <Filter onClick={toggle} size={25} style={{ color: 'white', padding: '0px 30px 0px 5px' }} /> 
+      <SidebarContent />
+    </Sidebar>
+     {/** MAIN */}
+    <Box gridArea='main'>
+      <MainContent />
+    </Box>
+     {/** FOOTER */}
     <Box gridArea='footer' border='top' align='center' justifyContent='center' direction='row' size='small'>
         made with ❤️ by motor
     </Box>
@@ -82,3 +71,5 @@ function App() {
 }
 
 export default App;
+
+
