@@ -46,7 +46,7 @@ function App() {
         <Filter
           onClick={toggle}
           size={25}
-          style={{ color: "white", padding: "0px 30px 0px 5px" }}
+          style={{ color: "black", padding: "0px 30px 0px 5px" }}
         />
         <SidebarContent />
       </Sidebar>
