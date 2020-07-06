@@ -25,10 +25,10 @@ const MainContent = () => {
       </Box>
 
       <Box width="100%" flex="grow" wrapProp={true} overflow="visble">
-        <Box width={dynamicWidth} {...boxProps}></Box>
-        <Box width={dynamicWidth} {...boxProps}></Box>
-        <Box width={dynamicWidth} {...boxProps}></Box>
-        <Box width={dynamicWidth} {...boxProps}></Box>
+        <Box width={dynamicWidth} {...boxProps} overflow="visble"></Box>
+        <Box width={dynamicWidth} {...boxProps} overflow="visble"></Box>
+        <Box width={dynamicWidth} {...boxProps} overflow="visble"></Box>
+        <Box width={dynamicWidth} {...boxProps} overflow="visble"></Box>
       </Box>
     </Box>
   );
