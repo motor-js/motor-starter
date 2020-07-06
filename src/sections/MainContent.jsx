@@ -24,7 +24,7 @@ const MainContent = () => {
         <Box flex={true} height="120px" {...boxProps}></Box>
       </Box>
 
-      <Box width="100%" flex="grow" wrapProp={true}>
+      <Box width="100%" flex="grow" wrapProp={true} overflow="visble">
         <Box width={dynamicWidth} {...boxProps}></Box>
         <Box width={dynamicWidth} {...boxProps}></Box>
         <Box width={dynamicWidth} {...boxProps}></Box>
