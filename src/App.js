@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import "./App.css";
-import MainContent from "./sections/MainContent.jsx";
-import SidebarContent from "./sections/SidebarContent.jsx";
-import HeaderContent from "./sections/HeaderContent.jsx";
-import FooterContent from "./sections/FooterContent.jsx";
-import { Grid, Box, Sidebar, useSidebar } from "motor-ui";
+import {
+  MainContent,
+  SidebarContent,
+  HeaderContent,
+  FooterContent,
+} from "./sections";
+import { Grid, Box, useSidebar } from "motor-ui";
 import { Filter } from "@styled-icons/ionicons-solid";
 
 const FilterIcon = styled(Filter)`
@@ -35,36 +37,24 @@ function App() {
         </span>
       </HeaderContent>
       {/** SIDEBAR */}
-      <Sidebar
-        width="30%"
-        collapsable
-        padding="15px 20px"
-        isOpen={isOpen}
-        backgroundColor="altGray1"
-        justifyContent="top"
-      >
-        <Filter
-          onClick={toggle}
-          size={25}
-          style={{ color: "black", padding: "0px 30px 0px 5px" }}
-        />
-        <SidebarContent />
-      </Sidebar>
+      <SidebarContent onClick={toggle} isOpen={isOpen} />
       {/** MAIN */}
       <Box gridArea="main">
         <MainContent />
       </Box>
       {/** FOOTER */}
       <FooterContent>
-        made with
-        <span
-          role="img"
-          aria-label="heart_emoji"
-          style={{ padding: "0px 5px" }}
-        >
-          ❤️
+        <span style={{ color: "white" }}>
+          made with
+          <span
+            role="img"
+            aria-label="heart_emoji"
+            style={{ padding: "0px 5px" }}
+          >
+            ❤️
+          </span>
+          by motor
         </span>
-        by motor
       </FooterContent>
     </Grid>
   );

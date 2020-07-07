@@ -9,8 +9,9 @@ const MainContent = () => {
 
   const boxProps = {
     backgroundColor: "white",
-    border: "dashed",
+    border: { color: "brand" },
     margin: "5px",
+    borderRadius: "8px",
   };
 
   const dynamicWidth = "calc(50% - 10px)";
