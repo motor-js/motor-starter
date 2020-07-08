@@ -14,40 +14,28 @@ const MainContent = () => {
     backgroundColor: 'white',
     border: 'dashed',
     margin: '5px',
+    height: {min: '200px'}
   }
 
   const dynamicWidth = 'calc(50% - 10px)';
 
   return (
-    <Box padding='10px' width='100%' overflow='hidden' direction='column'>
-      <CurrentSelections minHeight='60px' width='100%'/>
+    <Box padding='10px' width='100%' overflow='scroll' direction='column'>
+      <CurrentSelections minHeight='60px' width='100%'/>  
       <Box width='100%' direction={flexDirection}>
-        <Box 
-          flex={true}
-          height='120px'
-          {...boxProps}
-        >
+        <Box flex={true} {...boxProps}>
         </Box>
-        <Box 
-          flex={true}
-          height='120px'
-          {...boxProps}
-        >
+        <Box flex={true} {...boxProps}>
         </Box>
-        <Box 
-          flex={true}
-          height='120px'
-          {...boxProps}
-        >
+        <Box flex={true} {...boxProps}>
         </Box>
+      </Box> 
+      <Box width='100%' flex='grow' wrapProp={true}>
+        <Box width={dynamicWidth} height={{min: '200px'}} {...boxProps}></Box>
+        <Box width={dynamicWidth} height={{min: '200px'}} {...boxProps}></Box>
+        <Box width={dynamicWidth} height={{min: '200px'}} {...boxProps}></Box>
+        <Box width={dynamicWidth} height={{min: '200px'}} {...boxProps}></Box>
       </Box>
-
-    <Box width='100%' flex='grow' wrapProp={true}>
-      <Box width={dynamicWidth} {...boxProps}></Box>
-      <Box width={dynamicWidth} {...boxProps}></Box>
-      <Box width={dynamicWidth} {...boxProps}></Box>
-      <Box width={dynamicWidth} {...boxProps}></Box>
-    </Box>
 
     </Box>
   )
