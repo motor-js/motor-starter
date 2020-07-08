@@ -1,31 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
 
-import { Motor } from 'motor-ui'
-import theme from './theme'
+import { Motor } from "motor-ui";
+import { config } from "./config.js";
+import theme from "./theme";
 
 ReactDOM.render(
   <React.StrictMode>
-      <Motor 
-        config={{
-          /*  
-          //Enter your app config here..
-          host: '',
-          secure: ,
-          port: ,
-          prefix: '',
-          appId: '',
-          */
-        }}
-        theme={theme}
-      >
-        <App />
-      </Motor>
+    <Motor config={config} theme={theme}>
+      <App />
+    </Motor>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change
