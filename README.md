@@ -1,11 +1,13 @@
 # Starter Qlik Mashup dashboard using the Motor library
 
 
+
 ## Quik Start
 
 - Install dependencies by running yarn or npm install.
 - Run yarn start or npm run start to start the local development server.
 - 😎 That's it! You're ready to start building awesome dashboards using Motor JS
+
 
 
 ## Usage and Project Structure
@@ -15,5 +17,4 @@
 - Change the dashboard theme in src/theme.js.
 - src/App.js contains the dashboard structure built using the Motor Grid, Box & Sidebar components.
 - You can add content and components in src/sections. Which contains base files for the Header, Footer, Main and Sidebar sections.
-
---> Check out the Motor docs for more info on how to use the library
+- Check out the Motor docs for more info on how to use the library
