@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "motor-ui";
+import { Box } from "@motor-js/core";
 
 const FooterContent = (props) => {
   return (

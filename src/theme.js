@@ -2,7 +2,8 @@ const theme = {
   //Edit your dashboard theme below...
   global: {
     color: {
-      brand: '#ff6961'
+      brand: '#FF6961',
+      brandLight: '#FFCCC7',
     }
   }
 }

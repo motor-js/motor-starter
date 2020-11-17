@@ -1,9 +1,8 @@
 import React from "react";
-import { Box } from "motor-ui";
+import { Box } from "@motor-js/core";
 
 const HeaderContent = (props) => {
   return (
-    // <Box>Hello Sidebar  <span role='img' aria-label='wave_emoji'>👋</span></Box>
     <Box
       gridArea="header"
       backgroundColor="brand"

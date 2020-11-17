@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, useScreenSize, CurrentSelections } from "motor-ui";
+import { Box, useScreenSize, CurrentSelections } from "@motor-js/core";
 
 const MainContent = () => {
   const { screen } = useScreenSize();

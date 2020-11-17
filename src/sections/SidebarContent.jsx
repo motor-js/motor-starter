@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Sidebar } from "motor-ui";
+import { Box, Sidebar } from "@motor-js/core";
 import styled from "styled-components";
 import { Filter as styledFilter } from "@styled-icons/ionicons-solid";
 
@@ -10,8 +10,10 @@ const FilterIcon = styled(styledFilter)`
 
 const SidebarContent = (props) => {
   const toggle = () => {
-    props.onClick();
+    console.log('toggle')
+   // props.onClick();
   };
+
   return (
     <Sidebar
       width="30%"
