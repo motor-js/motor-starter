@@ -37,7 +37,7 @@ function App() {
         </span>
       </HeaderContent>
       {/** SIDEBAR */}
-      <SidebarContent onClick={toggle} isOpen={isOpen} />
+      <SidebarContent onClick={toggle} isOpen={isOpen} onClose={toggle}/>
       {/** MAIN */}
       <Box gridArea="main">
         <MainContent />
